@@ -1,8 +1,7 @@
-export const process = (params) => {
-  const html = params.html;
-  const id = params.id;
+export const process = (componentName) => {
+  const htmlDir = convertComponentNameToDir(componentName)
 
-  fetch(html)
+  fetch(htmlDir)
     .then((stream) => {
       return stream.text();
     })
@@ -10,9 +9,11 @@ export const process = (params) => {
       const node = converStringHtmlToNode(text);
       document.body.appendChild(node);
 
-      defineCustomElement(id);
+      defineCustomElement(componentName);
     });
 };
+
+const convertComponentNameToDir = (name) => `./components/${name}.html`
 
 const converStringHtmlToNode = (html) => {
   const elem = document.createElement("div");
