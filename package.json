@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "snamiki1212 <snamiki1212@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "yarn http-server"
+  },
   "devDependencies": {
     "http-server": "^0.12.3"
   }
