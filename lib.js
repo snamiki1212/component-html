@@ -1,5 +1,8 @@
 export const process = (params) => {
-  fetch(params.html)
+  const html = params.html;
+  const id = params.id;
+
+  fetch(html)
     .then((stream) => {
       return stream.text();
     })
@@ -7,7 +10,7 @@ export const process = (params) => {
       const node = converStringHtmlToNode(text);
       document.body.appendChild(node);
 
-      defineCustomElement(params.id);
+      defineCustomElement(id);
     });
 };
 
@@ -25,7 +28,7 @@ const defineCustomElement = (id) => {
         super();
 
         const elem = document.getElementById(id);
-        if (!elem) return console.error(`cannot find element by id: ${id}`);
+        if (!elem) return console.error(`Cannot find element by id: ${id}`);
         const content = elem.content;
         const clone = content.cloneNode(true);
         this.attachShadow({ mode: "open" }).appendChild(clone);
