@@ -7,7 +7,12 @@
     class WC_X extends HTMLElement {
       constructor() {
         super();
-        this.attachShadow({ mode: "open" }).innerHTML = '<div>hello world</div>'
+
+        // create shadow root
+        const shadow = this.attachShadow({ mode: "open" })
+
+        // insert
+        shadow.innerHTML = '<div>hello world</div>'
       }
     }
 
