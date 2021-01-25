@@ -16,10 +16,10 @@ $ open http://127.0.0.1:8080/
 
 ## Usage
 
-1. Create component with `<template>` tag on `.html` file at `/components/xxx-xxx.html`.
+1. Create component file like `/components/xxx-xxx.html`.
 
    ```html
-   <template id="xxx-xxx"> Hello World! </template>
+   <div>Hello World!</div>
    ```
 
 2. Add component name(`xxx-xxx`) in `main.js`.
