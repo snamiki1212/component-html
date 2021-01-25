@@ -14,7 +14,7 @@ $ yarn http-server
 $ open http://127.0.0.1:8080/
 ```
 
-## Usage
+## Explanation
 
 1. Create component file like `/components/xxx-xxx.html`.
 
@@ -23,6 +23,9 @@ $ open http://127.0.0.1:8080/
    ```
 
 2. Add component name(`xxx-xxx`) in `main.js`.
+
+   - Working on `customElements.define(...)` in logic
+
 3. Use `xxx-xxx` component in `index.html`.
 
    ```html
@@ -43,3 +46,4 @@ We cannot open .js file via .html because of security feature in browser.
 
 - [javascript - How to separate web components to individual files and load them? - Stack Overflow](https://stackoverflow.com/a/55081177/8842333)
 - [CodePen - example webcomponet template/define](https://codepen.io/snamiki1212/pen/rNMEjrm?editors=1010)
+- [Web Components のリアル/ Realistic Web Components - Speaker Deck](https://speakerdeck.com/aggre/realistic-web-components)
