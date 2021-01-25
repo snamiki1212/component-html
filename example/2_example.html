@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    fetch('2_template.html')
+      .then(res => res.text())
+      .then(strHTML => {
+        customElements.define('wc-x',
+          class extends HTMLElement {
+            constructor() {
+              super();
+              const shadow = this.attachShadow({ mode: "open" })
+              shadow.innerHTML = strHTML;
+            }
+          }
+        );
+      })
+
+  </script>
+</head>
+
+<body>
+  <wc-x></wc-x>
+</body>
+
+</html>
