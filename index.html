@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="webComponent.js"></script>
+  <style>
+    :root {
+      --bg-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- template -->
+  <template id="my-paragraph">
+    <p>this is my-paragraph</p>
+  </template>
+
+  <template id="your-paragraph">
+    <style>
+      p {
+        color: red;
+        background: var(--bg-color);
+      }
+    </style>
+    <p>this is your-paragraph</p>
+  </template>
+
+  <!-- render -->
+  <my-paragraph></my-paragraph>
+  <your-paragraph></your-paragraph>
+  <my-paragraph></my-paragraph>
+</body>
+
+</html>
