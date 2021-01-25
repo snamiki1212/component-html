@@ -1,4 +1,4 @@
-const defineCustomElement = (id) =>
+export const defineCustomElement = (id) =>
   customElements.define(
     id,
     class extends HTMLElement {
@@ -14,5 +14,5 @@ const defineCustomElement = (id) =>
     }
   );
 
-defineCustomElement("my-paragraph");
-defineCustomElement("your-paragraph");
+  defineCustomElement("my-paragraph");
+  defineCustomElement("your-paragraph");

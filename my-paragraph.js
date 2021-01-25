@@ -1,3 +1,2 @@
-// import { defineCustomElement } from './webComponent.js';
-
-// defineCustomElement
+  defineCustomElement("my-paragraph");
+  // defineCustomElement("your-paragraph");
