@@ -1,6 +1,5 @@
 export const process = (componentName) => {
   const htmlDir = convertComponentNameToDir(componentName)
-
   fetch(htmlDir)
     .then((stream) => {
       return stream.text();
@@ -8,7 +7,6 @@ export const process = (componentName) => {
     .then((text) => {
       const node = converStringHtmlToNode(text);
       document.body.appendChild(node);
-
       defineCustomElement(componentName);
     });
 };
@@ -27,7 +25,6 @@ const defineCustomElement = (id) => {
     class extends HTMLElement {
       constructor() {
         super();
-
         const elem = document.getElementById(id);
         if (!elem) return console.error(`Cannot find element by id: ${id}`);
         const content = elem.content;
