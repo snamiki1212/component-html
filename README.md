@@ -40,13 +40,17 @@ $ open http://127.0.0.1:8080/
 
 ### Pros
 
-- Using custom elements to use only pure JavaScript and HTML. No need 3rd party library.
+- Easy way to use component as custom element.
+- No need 3rd party library.
+- Vanilla JavaScript and HTML.
 
 ### Cons
 
-- Network latency would happe in this way because JavaScript try to fetch each component html files. If we bundled files into one file, such a problem wouldn't happen.
+- Network latency would happen in this way because JavaScript try to fetch each component html files. If we bundled files into one file, such a problem wouldn't happen.
 
   > <img width="610" alt="Screen Shot 2021-01-29 at 15 29 08" src="https://user-images.githubusercontent.com/26793088/106337724-c6f35280-6246-11eb-8a10-59f98c8387eb.png">
+
+- Waiting time happen untill custome element load and render.
 
 ## Why Use `http-server`
 
