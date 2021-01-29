@@ -1,11 +1,19 @@
 export const process = (componentName) => {
+  if(Array.isArray(componentName)){
+    componentName.forEach(componentName => doProcess(componentName))
+  }else {
+    doProcess(componentName)
+  }
+};
+
+const doProcess = (componentName) => {
   const htmlDir = convertComponentNameToDir(componentName);
 
   fetch(htmlDir)
     .then((res) => res.text())
     .then((strHtml) => cssImportLine + strHtml)
     .then((strHtml) => define(componentName, strHtml));
-};
+}
 
 const convertComponentNameToDir = (name) => `./components/${name}.html`;
 

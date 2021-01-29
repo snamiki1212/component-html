@@ -6,8 +6,4 @@ const componentNameList = [
   "your-paragraph",
 ]
 
-componentNameList.forEach(name => {
-  process(name);
-})
-
-
+process(componentNameList);
