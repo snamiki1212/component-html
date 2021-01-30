@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    const template = `
+      <div>
+        <p>this is sky component</p>
+        <slot id="title" name="title">__REPLACE_ME__</slot>
+        <slot id="button" name="button">__REPLACE_ME__</slot>
+      </div>
+    `;
+
+    window.customElements.define('app-sky', class extends HTMLElement {
+      constructor() {
+        console.log("[constructor]")
+        // 
+        super();
+        const shadow = this.attachShadow({ mode: 'open' })
+        shadow.innerHTML = template;
+      }
+
+      connectedCallback() {
+        console.log("[constructed]")
+        // 
+        const id = '#button';
+        const elem = this.shadowRoot.querySelector(id)
+        if (!elem) return console.warn("Cannot find this id: ", id);
+        elem.addEventListener('click', this.handleClicked);
+      }
+
+      disconnectedCallback() {
+        console.log("[disconnected]");
+      }
+
+      handleClicked() {
+        alert("Hello World!");
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <app-sky color="red">
+    <div slot="title">This is title</div>
+    <button slot="button">Click me!!!</button>
+  </app-sky>
+</body>
+
+</html>

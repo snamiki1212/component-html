@@ -9,7 +9,7 @@ Example WebComponent feature.
 ## Installation
 
 ```zsh
-$ yarn install
+$ yarn
 $ yarn http-server
 $ open http://127.0.0.1:8080/
 ```
@@ -51,6 +51,20 @@ $ open http://127.0.0.1:8080/
   > <img width="610" alt="Screen Shot 2021-01-29 at 15 29 08" src="https://user-images.githubusercontent.com/26793088/106337724-c6f35280-6246-11eb-8a10-59f98c8387eb.png">
 
 - Waiting time happen untill custome element load and render.
+
+## Example Cases:
+
+```zsh
+# Case1
+$ open examples/1/index.html
+
+# Case2
+$ yarn start
+$ open http://localhost:8080/examples/2/index.html
+
+# Case3
+$ open examples/3/index.html
+```
 
 ## Why Use `http-server`
 
